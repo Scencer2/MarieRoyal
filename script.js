@@ -1,13 +1,13 @@
 const gallery = document.getElementById('gallery');
 
-// Create list of filenames (gma01.jpg to gma82.jpg)
+// Create list of filenames
 const imageList = [];
 for (let i = 1; i <= 82; i++) {
   const filename = i < 10 ? `gma0${i}.jpg` : `gma${i}.jpg`;
   imageList.push(filename);
 }
 
-// Shuffle the array using Fisher-Yates (modern and reliable)
+// shuffle the images
 for (let i = imageList.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
   [imageList[i], imageList[j]] = [imageList[j], imageList[i]];
@@ -22,7 +22,7 @@ imageList.forEach(filename => {
   gallery.appendChild(img);
 });
 
-// Handle lightbox open
+// lightbox open
 gallery.addEventListener("click", (e) => {
   if (e.target.classList.contains("gallery-image")) {
     const lightbox = document.getElementById("lightbox");
@@ -32,12 +32,12 @@ gallery.addEventListener("click", (e) => {
   }
 });
 
-// Handle lightbox close
+// lightbox close
 document.getElementById("lightbox").addEventListener("click", () => {
   document.getElementById("lightbox").classList.add("hidden");
 });
 
-// Audio button logic
+// Audio button
 const playButtons = document.querySelectorAll(".play-button");
 let currentAudio = null;
 
@@ -56,6 +56,3 @@ playButtons.forEach(button => {
     currentAudio.play();
   });
 });
-
-
-
