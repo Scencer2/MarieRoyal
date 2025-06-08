@@ -2,7 +2,7 @@ const gallery = document.getElementById('gallery');
 
 // Create list of filenames
 const imageList = [];
-for (let i = 1; i <= 82; i++) {
+for (let i = 1; i <= 92; i++) {
   const filename = i < 10 ? `gma0${i}.jpg` : `gma${i}.jpg`;
   imageList.push(filename);
 }
